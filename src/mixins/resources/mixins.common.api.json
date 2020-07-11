@@ -13,7 +13,8 @@
         "mcp.util.ResourceLocationMixin_API",
 
         "mcp.item.ItemMixin_API",
-        "mcp.item.ItemStackMixin_API"
+        "mcp.item.ItemStackMixin_API",
+        "mcp.entity.EntityMixin_API"
     ],
     "server": [
         "mcp.server.dedicated.DedicatedServerMixin_API"

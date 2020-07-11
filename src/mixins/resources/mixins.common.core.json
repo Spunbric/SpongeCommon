@@ -8,7 +8,9 @@
     "mixinPriority": 1101,
     "mixins": [
         "server.management.PlayerProfileCacheMixin",
-        "server.MinecraftServerMixin"
+        "server.MinecraftServerMixin",
+
+        "data.CustomDataHolderMixin"
     ],
     "server": [
     ],
