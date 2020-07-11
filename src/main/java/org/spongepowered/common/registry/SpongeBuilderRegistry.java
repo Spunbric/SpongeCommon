@@ -29,10 +29,12 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.inject.Singleton;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.item.inventory.ItemStack;
 import org.spongepowered.api.registry.BuilderRegistry;
 import org.spongepowered.api.registry.DuplicateRegistrationException;
 import org.spongepowered.api.registry.UnknownTypeException;
 import org.spongepowered.api.util.ResettableBuilder;
+import org.spongepowered.common.item.SpongeItemStackBuilder;
 
 import java.util.Map;
 import java.util.function.Supplier;
@@ -74,7 +76,7 @@ public final class SpongeBuilderRegistry implements BuilderRegistry {
     public void registerDefaultBuilders() {
         this
             .register(ResourceKey.Builder.class, SpongeResourceKeyBuilder::new)
-//            .register(ItemStack.Builder.class, SpongeItemStackBuilder::new)
+            .register(ItemStack.Builder.class, SpongeItemStackBuilder::new)
 //            .register(TradeOffer.Builder.class, SpongeTradeOfferBuilder::new)
 //            .register(FireworkEffect.Builder.class, SpongeFireworkEffectBuilder::new)
 //            .register(PotionEffect.Builder.class, SpongePotionBuilder::new)

@@ -30,11 +30,13 @@ import co.aikar.timings.TimingsFactory;
 import com.google.inject.Singleton;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import org.spongepowered.api.advancement.criteria.AdvancementCriterion;
+import org.spongepowered.api.item.inventory.ItemStackSnapshot;
 import org.spongepowered.api.registry.DuplicateRegistrationException;
 import org.spongepowered.api.registry.FactoryRegistry;
 import org.spongepowered.api.registry.UnknownTypeException;
 import org.spongepowered.api.resourcepack.ResourcePack;
 import org.spongepowered.api.text.serializer.TextSerializers;
+import org.spongepowered.common.item.SpongeItemStackSnapshot;
 import org.spongepowered.common.registry.type.advancement.SpongeAdvancementCriterionFactory;
 import org.spongepowered.common.relocate.co.aikar.timings.SpongeTimingsFactory;
 import org.spongepowered.common.resourcepack.SpongeResourcePackFactory;
@@ -80,5 +82,6 @@ public final class SpongeFactoryRegistry implements FactoryRegistry {
         this.registerFactory(AdvancementCriterion.Factory.class, SpongeAdvancementCriterionFactory.INSTANCE);
         this.registerFactory(TimingsFactory.class, SpongeTimingsFactory.INSTANCE);
         this.registerFactory(ResourcePack.Factory.class, SpongeResourcePackFactory.INSTANCE);
+        this.registerFactory(ItemStackSnapshot.Factory.class, () -> SpongeItemStackSnapshot.EMPTY);
     }
 }

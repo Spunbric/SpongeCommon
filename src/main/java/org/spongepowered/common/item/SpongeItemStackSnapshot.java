@@ -60,6 +60,8 @@ import javax.annotation.Nullable;
 @SuppressWarnings("unchecked")
 public class SpongeItemStackSnapshot implements ItemStackSnapshot {
 
+    public static final ItemStackSnapshot EMPTY = ItemStackUtil.snapshotOf(net.minecraft.item.ItemStack.EMPTY);
+
     private final ItemType itemType;
     private final int quantity;
     private final int damageValue;
