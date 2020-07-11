@@ -35,6 +35,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 import org.spongepowered.api.CatalogType;
 import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.data.Key;
 import org.spongepowered.api.event.cause.EventContextKey;
 import org.spongepowered.api.registry.CatalogRegistry;
 import org.spongepowered.api.registry.DuplicateRegistrationException;
@@ -43,6 +44,7 @@ import org.spongepowered.api.service.economy.Currency;
 import org.spongepowered.api.util.Tuple;
 import org.spongepowered.common.accessor.util.registry.SimpleRegistryAccessor;
 import org.spongepowered.common.registry.builtin.sponge.EventContextKeyStreamGenerator;
+import org.spongepowered.common.registry.builtin.sponge.KeyStreamGenerator;
 import org.spongepowered.common.registry.builtin.vanilla.ItemSupplier;
 
 import java.util.ArrayList;
@@ -274,6 +276,8 @@ public final class SpongeCatalogRegistry implements CatalogRegistry {
      * Only specify lines of registries that are not found in {@link Registry}.
      */
     public void registerDefaultRegistries() {
+
+        this.generateRegistry(Key.class, ResourceKey.sponge("data_key"), KeyStreamGenerator.stream(), true);
 
         // TODO 1.14 - We'll take on a case by case basis if any mods are extending/replacing Enum values and therefore breaks this. Otherwise it will
         // TODO 1.14 - get to the point of insanity if literally every enum in the game becomes hardcoded lines that we have to map out...

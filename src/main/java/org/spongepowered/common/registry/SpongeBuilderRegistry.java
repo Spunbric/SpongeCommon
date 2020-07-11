@@ -29,11 +29,13 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.inject.Singleton;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import org.spongepowered.api.ResourceKey;
+import org.spongepowered.api.data.Key;
 import org.spongepowered.api.item.inventory.ItemStack;
 import org.spongepowered.api.registry.BuilderRegistry;
 import org.spongepowered.api.registry.DuplicateRegistrationException;
 import org.spongepowered.api.registry.UnknownTypeException;
 import org.spongepowered.api.util.ResettableBuilder;
+import org.spongepowered.common.data.key.SpongeKeyBuilder;
 import org.spongepowered.common.item.SpongeItemStackBuilder;
 
 import java.util.Map;
@@ -76,6 +78,7 @@ public final class SpongeBuilderRegistry implements BuilderRegistry {
     public void registerDefaultBuilders() {
         this
             .register(ResourceKey.Builder.class, SpongeResourceKeyBuilder::new)
+            .register(Key.Builder.class, SpongeKeyBuilder::new)
             .register(ItemStack.Builder.class, SpongeItemStackBuilder::new)
 //            .register(TradeOffer.Builder.class, SpongeTradeOfferBuilder::new)
 //            .register(FireworkEffect.Builder.class, SpongeFireworkEffectBuilder::new)
@@ -131,7 +134,6 @@ public final class SpongeBuilderRegistry implements BuilderRegistry {
 //            .register(EventContextKey.Builder.class, SpongeEventContextKeyBuilder::new)
 //            .register(Enchantment.Builder.class, SpongeEnchantmentBuilder::new)
 //            .register(Enchantment.RandomListBuilder.class, SpongeRandomEnchantmentListBuilder::new)
-//            .register(Key.Builder.class, SpongeKeyBuilder::new)
 //            .register(Advancement.Builder.class, SpongeAdvancementBuilder::new)
 //            .register(AdvancementTree.Builder.class, SpongeAdvancementTreeBuilder::new)
 //            .register(DisplayInfo.Builder.class, SpongeDisplayInfoBuilder::new)
